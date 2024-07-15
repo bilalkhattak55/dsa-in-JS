@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Element in Array</title>
+</head>
+
+<body>
+
+
+    <label for="position">Position</label>
+    <input type="text" id="position" name="">
+    <label for="newEl">New Element</label>
+    <input type="text" name="" id="newEl">
+    <button onclick="insertElementInArr()">submit</button>
+
+
+    <script>
+
+        const arr = [2, 3, 4, 6, 7, 8, 9];
+       
+        // arr.splice(3, 1, 5,7, "bilal")
+        // console.log("outside function", arr)
+        
+        
+
+        function insertElementInArr() {
+            const newEl = parseInt(document.getElementById("newEl").value);
+            const position = parseInt(document.getElementById("position").value);
+
+            for (let i = arr.length - 1; i >= 0; i--) {
+                // console.log("position " + i + " Number is " + arr[i])
+                if (i >= position) {
+                    // console.log("new vals", arr[i])
+                    arr[i+1] = arr[i]
+                    if (i == position) {
+                        arr[i] = newEl
+                    }
+                }
+            }
+            console.log("inside function", arr)
+        }
+
+       
+        console.log("bilal")
+        console.log(arr)
+
+    </script>
+
+</body>
+
+</html>

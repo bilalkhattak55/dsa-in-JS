@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        console.log(arr)
+
+        const position = 3;
+        for (let i = position; i < arr.length - 1; i++) {
+            arr[i] = arr[i + 1]
+        }
+        console.log(arr)
+        arr.length = arr.length -1;
+        console.log("final answer with deleted item",arr)
+
+
+        //explanation
+        // This loop iterates from the specified position(3) to the second - to - last element of the array(arr.length - 1).For each iteration, it shifts the element at index i + 1 to index i.
+
+        //     Let's step through each iteration of the loop:
+
+        //     When i = 3: arr[3] = arr[4] → arr becomes[1, 2, 3, 5, 5, 6, 7, 8, 9]
+        //     When i = 4: arr[4] = arr[5] → arr becomes[1, 2, 3, 5, 6, 6, 7, 8, 9]
+        //     When i = 5: arr[5] = arr[6] → arr becomes[1, 2, 3, 5, 6, 7, 7, 8, 9]
+        //     When i = 6: arr[6] = arr[7] → arr becomes[1, 2, 3, 5, 6, 7, 8, 8, 9]
+        //     When i = 7: arr[7] = arr[8] → arr becomes[1, 2, 3, 5, 6, 7, 8, 9, 9]
+
+
+        // const arr2 = [6, 7, 8, 9, 0, 1, 2]
+        // const position2 = 3;
+
+        // for(let i = 0; i < arr2.length; i++){
+        //     console.log("item",arr2[i])
+        //     if(i === position2){
+        //         arr2[i] = arr2[i - 1]
+        //         arr2[i] = 10
+
+                
+        //     }
+        // }
+
+        // console.log("arr2", arr2)
+
+        let arr3 = [0,1,2,3,4,5,6,7,8,9]
+        const position3 = 3;
+
+        for(let i = position3; i < arr3.length -1; i++) {
+            console.log(arr[i])
+            arr3[i]= arr3[i + 1];
+
+        }
+  console.log(arr3)
+    </script>
+</body>
+
+</html>
