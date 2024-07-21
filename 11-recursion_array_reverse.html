@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //we need to swap values from start to end and end to start
+        const arr = [2, 4, 10, 3, 60, 50, 100]
+        function reverseArray(arr, start, end){
+           console.warn(arr)
+           if(start<=end){const temp = arr[start];
+           arr[start] = arr[end];
+           arr[end] = temp;
+           reverseArray(arr, start+1, end-1)}
+        }
+        reverseArray(arr, 0, arr.length-1)
+    </script>
+</body>
+</html>

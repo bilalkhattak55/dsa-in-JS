@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <h1>Space complexity (Memory)</h1>
+        <h1>Time Complexity (Time takes) (No of lines)
+
+        </h1>
+    </div>
+    
+
+    <script>
+
+        //this will work only on sorted arrays
+        let data = [3, 7, 12,34,56,90];
+        let data2 = [4, 9, 25, 45];
+        const mergedData = [];
+
+        let d1=0;
+        let d2=0;
+        let d3=0;
+
+        while(d1 < data.length && d2 < data2.length){
+            if(data[d1] < data2[d2]){
+                mergedData[d3] = data[d1]
+                d1++
+            }else{
+                mergedData[d3] = data2[d2]
+                d2++
+            }
+            d3++
+        }
+
+        console.warn(mergedData)
+
+        while(d1 < data.length){
+             mergedData[d3] = data[d1];
+             d1++;
+             d3++
+        }
+
+        console.warn(mergedData)
+
+
+
+
+    </script>
+</body>
+</html>
