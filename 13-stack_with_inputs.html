@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" name="" id="newValue">
+    <button onclick="push()">Add element</button>
+    <button onclick="pop()" >Delete element</button>
+    <button onclick="display()">Display all</button>
+    
+    <script>
+        const data = [];
+        let currentSize = data.length;
+        let maxSize = 5;
+
+        console.log("1",data)
+
+        function push(){
+            const newValue = document.getElementById('newValue').value;
+           if(maxSize>currentSize){
+             data[currentSize] = parseInt(newValue);
+             currentSize++
+           }else{
+            alert("stack is full you can not add new value"+ newValue)
+           }
+           console.log("2",data)
+        }
+
+        function pop(){
+            if(currentSize>0){
+                currentSize-=1;
+                data.length = currentSize
+            }else {
+                alert("stack is already empty")
+            }
+        }
+
+        function display() {
+            for(let i=0; i<currentSize-1; i++){
+                console.log(`el. no ${i} and values are ${data[i]}`)
+            }
+        }
+       
+       
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const data = [];
+        let currentSize = data.length;
+        let maxSize = 5;
+
+        console.log("1",data)
+
+        function push(newValue){
+           if(maxSize>currentSize){
+             data[currentSize] = newValue;
+             currentSize++
+           }else{
+            alert("stack is full you can not add new value"+ newValue)
+           }
+        }
+
+        function pop(){
+            if(currentSize>0){
+                currentSize-=1;
+                data.length = currentSize
+            }else {
+                alert("stack is already empty")
+            }
+        }
+
+        push(6)
+        push(3)
+        push(4)
+        push(1)
+        push(10)
+        push(20)
+        push(25)
+
+        pop()
+        pop()
+        pop()
+        push("bilal")
+        pop()
+        pop()
+        pop()
+        pop()
+       
+
+        
+        console.log(data)
+    </script>
+</body>
+</html>
