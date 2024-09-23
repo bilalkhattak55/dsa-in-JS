@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let queue = [];
+        let currentSize = queue.length;
+        let maxSize = 5;
+
+        function enqueue(newVal) {
+            if (currentSize > maxSize) {
+                alert('queue full')
+            } else {
+                queue[currentSize] = newVal;
+                currentSize++
+            }
+        }
+        function addElement() {
+            let newVal = document.getElementById('el').value
+            if (currentSize > maxSize) {
+                alert('queue full')
+            } else {
+                queue[currentSize] = newVal;
+                currentSize++
+            }
+            newVal = ''
+        }
+        function deQueue() {
+            for(let i=0; i<queue.length; i++) {
+                queue[i] = queue[i+1]
+            }
+            currentSize--
+            queue.length = currentSize;
+        }
+        function front() {
+            if(currentSize>0){
+                const front = queue[0]
+                console.log('front',front);
+            }
+        }
+        function rear() {
+            if(currentSize>0){
+                const rear = queue[currentSize-1]
+                console.log("rear",rear)
+            }
+        }
+        function display() {
+            console.log(queue)
+        }
+       
+        
+        console.log(queue)
+    </script>
+
+    <input type="text" name="" id="el">
+    <button onclick="addElement()">ADD</button>
+    <button onclick="display()">Display</button>
+    <button onclick="front()">FRONT</button>
+    <button onclick="rear()">Rear</button>
+    <button onclick="deQueue()">Dequeue</button>
+
+</body>
+</html>

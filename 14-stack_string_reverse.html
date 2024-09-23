@@ -7,5 +7,42 @@
 </head>
 <body>
     
+    <script>
+
+      let data = [];
+      let curSize = data.length;
+
+      function push(newvalue) {
+        data[curSize] = newvalue;
+        curSize++
+      }
+      function pop() {
+        const lastItem = data[curSize - 1]
+        curSize -= 1;
+        data.length = curSize;
+        return lastItem;
+
+      }
+      function revStr(item) {
+        for(let i=0; i<item.length; i++) {
+            push(item[i])
+        }
+        for(let i=0; i<item.length; i++) {
+            item[i] = pop()
+        }
+      }
+     
+
+
+      let str = 'bilal';
+      str = str.split('');
+      revStr(str)
+      console.log(str.join(''))
+
+        
+        
+
+        
+    </script>
 </body>
 </html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let queue = [];
+        let currentSize = queue.length;
+        let maxSize = 5;
+
+        function enqueue(newVal) {
+            if (currentSize > maxSize) {
+                alert('queue full')
+            } else {
+                queue[currentSize] = newVal;
+                currentSize++
+            }
+        }
+        function deQueue() {
+            for(let i=0; i<queue.length; i++) {
+                queue[i] = queue[i+1]
+            }
+            currentSize--
+            queue.length = currentSize;
+        }
+        enqueue(1);
+        enqueue(2);
+        enqueue(3);
+        enqueue(4);
+        enqueue(5);
+        
+        deQueue()
+        deQueue()
+        console.log(queue)
+    </script>
+</body>
+
+</html>

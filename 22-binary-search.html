@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let data = [2, 3, 4, 6, 8, 10];
+        let find = 8
+        let value=undefined
+        let start = 0;
+
+        let end = data.length-1;
+        let position = undefined;
+
+        while(start<=end){
+            let mid = Math.floor((start+end)/2);
+            if(data[mid]=== 8){
+                position = mid
+                value = data[position]
+
+                break
+            }else if(data[mid] < find){
+                start = mid+1
+            }else {
+                end = mid-1
+            }
+        }
+
+        console.log("posit", position)
+        console.log("value", value)
+
+
+
+    </script>
+</body>
+</html>

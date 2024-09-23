@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack With Class</title>
+</head>
+<body>
+
+    <script>
+        class Stack {
+            data;
+            currSize;
+            maxSize
+
+            constructor (size) {
+               this.data =[];
+               this.maxSize = size;
+               this.currSize = this.data.length;
+            }
+            push(newVal){
+                if(this.currSize >= this.maxSize){
+                    alert('stack is full')
+                    return
+                }else {
+                    this.data[this.currSize] = newVal;
+                    this.currSize++
+                }
+            }
+            pop() {
+                if(this.currSize> 0) {
+                    let lastItem = this.data[this.currSize - 1]
+                    this.currSize--;
+                    this.data.length = this.currSize;
+                    return lastItem;
+                }else {
+                    alert('stack is empty')
+                    return
+                }
+            }
+            revString(item) {
+                for(let i=0; i<item.length; i++){
+                    this.push(item[i])
+                }
+                // for(let i=0; i<item.length; i++) {
+                //    item[i] = this.pop()
+                // }
+            }
+            display =()=> {
+                console.log("data",this.data)
+            }
+
+        }
+
+         neww = new Stack(5)
+         let str = 'bilal';
+         str = str.split("");
+         neww.revString(str)
+         console.log(str.join(""))
+       
+    </script>
+    
+</body>
+</html>
